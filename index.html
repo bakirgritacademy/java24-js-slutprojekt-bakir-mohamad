@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Explorer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>Movie Explorer</h1>
+      <ul>
+        <li><button id="btn-top-rated">Top Rated</button></li>
+        <li><button id="btn-popular">Popular</button></li>
+      </ul>
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Sök film eller person..." required />
+        <button type="submit">Sök</button>
+      </form>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sort-controls">
+      <label for="sort">Sortera:</label>
+      <select id="sort">
+        <option value="">Ingen sortering</option>
+        <option value="title-asc">Titel A–Ö</option>
+        <option value="title-desc">Titel Ö–A</option>
+        <option value="popularity-asc">Popularitet ↑</option>
+        <option value="popularity-desc">Popularitet ↓</option>
+      </select>
+    </section>
+
+    <section id="results-container"></section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
