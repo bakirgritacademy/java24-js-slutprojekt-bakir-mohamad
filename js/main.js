@@ -19,6 +19,8 @@ const searchInput = document.getElementById('search-input');
 const btnTopRated = document.getElementById('btn-top-rated');
 const btnPopular = document.getElementById('btn-popular');
 const sortSelect = document.getElementById('sort');
+const searchTypeSelect = document.getElementById('search-type');
+
 
 
 let currentItems = []; 
@@ -69,9 +71,10 @@ searchForm.addEventListener('submit', async (e) => {
   const query = searchInput.value.trim();
   if (!query) return;
 
-  const data = await searchManager.searchRaw(query);
+  const type = searchTypeSelect.value;
+  const data = await searchManager.searchRaw(query, type);
   currentItems = data.results;
-  currentType = detectResultType(currentItems);
+  currentType = type;
 
   if (currentItems.length === 0) {
     UIManager.renderMessage('Inga resultat hittades.');

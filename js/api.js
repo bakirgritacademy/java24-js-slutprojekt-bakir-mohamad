@@ -36,8 +36,8 @@ export const fetchPopularMovies = async () => {
  * @param {string} query - Text som användaren söker efter (t.ex. filmtitel eller skådespelarnamn)
  * @returns {Promise<object>} - JSON-objekt med sökresultat
  */
-export const search = async (query) => {
-  const res = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&language=sv-SE&query=${encodeURIComponent(query)}&page=1`);
+export const search = async (query, type = 'multi') => {
+  const res = await fetch(`${BASE_URL}/search/${type}?api_key=${API_KEY}&language=sv-SE&query=${encodeURIComponent(query)}&page=1`);
   const data = await res.json();
   return data;
 };

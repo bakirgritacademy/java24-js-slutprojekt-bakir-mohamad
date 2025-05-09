@@ -15,6 +15,11 @@
         <li><button id="btn-popular">Popular</button></li>
       </ul>
       <form id="search-form">
+        <select id="search-type">
+          <option value="multi">Alla</option>
+          <option value="movie">Endast filmer</option>
+            <option value="person">Endast personer</option>
+        </select>
         <input type="text" id="search-input" placeholder="Sök film eller person..." required />
         <button type="submit">Sök</button>
       </form>

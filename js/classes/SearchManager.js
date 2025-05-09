@@ -57,9 +57,9 @@ export default class SearchManager {
    * @param {string} query - Text att söka efter
    * @returns {object} - Sökresultat från API
    */
-  searchRaw = async (query) => {
+  searchRaw = async (query, type = 'multi') => {
     try {
-      const data = await search(query);
+      const data = await search(query, type); 
       return data;
     } catch (error) {
       console.error('searchRaw-fel:', error);
